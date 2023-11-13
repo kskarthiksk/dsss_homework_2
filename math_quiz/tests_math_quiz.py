@@ -27,7 +27,8 @@ class TestMathGame(unittest.TestCase):
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                self.assertTrue(format_problem(num1, num2, operator) == expected_problem and calculation(num1, num2, operator) == expected_answer)
+                self.assertTrue(format_problem(num1, num2, operator) == expected_problem and 
+                                calculation(num1, num2, operator) == expected_answer)
 
 if __name__ == "__main__":
     unittest.main()

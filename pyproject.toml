@@ -1,0 +1,17 @@
+[project]
+name = "math_quiz"
+version = "0.0.1"
+authors = [
+  { name="Karthik Sreekumar" },
+]
+description = "A simple math quiz"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: Apache 2.0",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/kskarthiksk/dsss_homework_2.git"
