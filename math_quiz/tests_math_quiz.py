@@ -1,5 +1,5 @@
 import unittest
-from math_quiz import function_A, function_B, function_C
+from math_quiz import random_number, choose_operation, format_problem, calculation
 
 
 class TestMathGame(unittest.TestCase):
@@ -9,22 +9,25 @@ class TestMathGame(unittest.TestCase):
         min_val = 1
         max_val = 10
         for _ in range(1000):  # Test a large number of random values
-            rand_num = function_A(min_val, max_val)
+            rand_num = random_number(min_val, max_val)
             self.assertTrue(min_val <= rand_num <= max_val)
 
-    def test_function_B(self):
-        # TODO
-        pass
+    def test_choose_operation(self):
+        # Test if the operations are correct
+        for _ in range(100):
+             operation = choose_operation()
+             self.assertTrue(operation in ['+', '-', '*'])
 
-    def test_function_C(self):
+    def test_format_problem(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (7, 3, '*', '7 * 3', 21),
+                (6, 4, '-', '6 - 4', 2),
+                (3, 2, '*', '3 * 2', 6)
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                # TODO
-                pass
+                self.assertTrue(format_problem(num1, num2, operator) == expected_problem and calculation(num1, num2, operator) == expected_answer)
 
 if __name__ == "__main__":
     unittest.main()
